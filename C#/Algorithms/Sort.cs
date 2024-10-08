@@ -1,4 +1,6 @@
-﻿namespace Algorithms
+﻿using System.Drawing;
+
+namespace Algorithms
 {
     public static class Sort
     {
@@ -189,7 +191,49 @@
          */
         public static List<T> Heapsort<T>(List<T> A) where T : IComparable<T>
         {
-            throw new NotImplementedException();
+            static void MaxHeapify(List<T> A, int n, int i)
+            {
+                int largest = i;
+                int l = 2 * i + 1;
+                int r = 2 * i + 2;
+
+                if (l < n && A[l].CompareTo(A[largest]) > 0)
+                {
+                    largest = l;
+                }
+
+                if (r < n && A[r].CompareTo(A[largest]) > 0)
+                {
+                    largest = r;
+                }
+
+                if (largest != i)
+                {
+                    T temp = A[i];
+                    A[i] = A[largest];
+                    A[largest] = temp;
+
+                    MaxHeapify(A, n, largest);
+                }
+            }
+
+            if (A.Count <= 1)
+            {
+                return A;
+            }
+            for (int i = A.Count / 2 - 1; i >= 0; i--)
+            {
+                MaxHeapify(A, A.Count, i);
+            }
+            for (int i = A.Count - 1; i >= 0; i--)
+            {
+                T temp = A[0];
+                A[0] = A[i];
+                A[i] = temp;
+                MaxHeapify(A, i, 0);
+            }
+
+            return A;
         }
 
         /*  Quicksort
