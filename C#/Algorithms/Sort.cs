@@ -64,6 +64,12 @@ namespace Algorithms
             return true;
         }
 
+        public static void Exchange<T>(List<T> A, int x, int y)
+        {
+            var temp = A[x];
+            A[x] = A[y];
+            A[y] = temp;
+        }
 
         /*  Insertion Sort
          *  
@@ -175,9 +181,7 @@ namespace Algorithms
                 {
                     if (A[j].CompareTo(A[j - 1]) < 0)
                     {
-                        T temp = A[j];
-                        A[j] = A[j - 1];
-                        A[j - 1] = temp;
+                        Exchange(A, j, j - 1);
                     }
                 }
             }
@@ -209,9 +213,7 @@ namespace Algorithms
 
                 if (largest != i)
                 {
-                    T temp = A[i];
-                    A[i] = A[largest];
-                    A[largest] = temp;
+                    Exchange(A, i, largest);
 
                     MaxHeapify(A, n, largest);
                 }
@@ -227,9 +229,7 @@ namespace Algorithms
             }
             for (int i = A.Count - 1; i >= 0; i--)
             {
-                T temp = A[0];
-                A[0] = A[i];
-                A[i] = temp;
+                Exchange(A, 0, i);
                 MaxHeapify(A, i, 0);
             }
 
@@ -243,7 +243,35 @@ namespace Algorithms
          */
         public static List<T> Quicksort<T>(List<T> A) where T : IComparable<T>
         {
-            throw new NotImplementedException();
+            void Sort(List<T> A, int p, int r) {
+                if (p < r)
+                {
+                    int q = Partition(A, p, r);
+                    Sort(A, p, q - 1);
+                    Sort(A, q + 1, r);
+                }
+            }
+
+            int Partition(List<T> values, int p, int r) 
+            {
+                T x = A[r];
+                int i = p - 1;
+                for (int j = p; j <= r - 1; j++)
+                {
+                    if (A[j].CompareTo(x) <= 0)
+                    {
+                        i = i + 1;
+                        Exchange<T>(A, j, i);
+                    }
+                }
+                Exchange<T>(A, i + 1, r);
+
+                return i + 1;
+            }
+
+            Sort(A, 0, A.Count - 1);
+
+            return A;
         }
 
         /*  Counting Sort
