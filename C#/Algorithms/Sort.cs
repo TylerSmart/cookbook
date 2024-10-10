@@ -1,9 +1,14 @@
-﻿using System.Drawing;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
     public static class Sort
     {
+        public static bool DEBUG = false;
+
+        public static void Log(string message = "")
+        {
+            if (DEBUG) Console.WriteLine(message);
+        }
+
         public static bool Verify<T>(List<T> sortedList, List<T> list) where T : IComparable<T>
         {
             // ensure both lists have the same count
@@ -66,9 +71,12 @@ namespace Algorithms
 
         public static void Exchange<T>(List<T> A, int x, int y)
         {
+            Log($"A: [{string.Join(',', A)}]");
+            Log($"A[{x}]={A[x]} <> A[{y}]={A[y]}");
             var temp = A[x];
             A[x] = A[y];
             A[y] = temp;
+            Log($"A: [{string.Join(',', A)}]");
         }
 
         /*  Insertion Sort
@@ -243,16 +251,18 @@ namespace Algorithms
          */
         public static List<T> Quicksort<T>(List<T> A) where T : IComparable<T>
         {
-            void Sort(List<T> A, int p, int r) {
+            void Sort(List<T> A, int p, int r)
+            {
                 if (p < r)
                 {
                     int q = Partition(A, p, r);
+
                     Sort(A, p, q - 1);
                     Sort(A, q + 1, r);
                 }
             }
 
-            int Partition(List<T> values, int p, int r) 
+            int Partition(List<T> values, int p, int r)
             {
                 T x = A[r];
                 int i = p - 1;
@@ -270,6 +280,64 @@ namespace Algorithms
             }
 
             Sort(A, 0, A.Count - 1);
+
+            return A;
+        }
+        public static List<T> QuicksortImproved<T>(List<T> A) where T : IComparable<T>
+        {
+            List<T> SortArray(List<T> A, int p, int r)
+            {
+                Log($"p: {p}, r: {r}");
+
+                int i = p; // left index
+                int j = r; // right index
+                T q = A[p]; // pivot
+
+                Log($"i: {i}, j: {j}, q: A[{p}]={q}");
+
+                while (i <= j)
+                {
+                    Log($"{i} <= {j}");
+
+                    while (A[i].CompareTo(q) < 0)
+                    {
+                        Log($"A[{i}]={A[i]} < {q}");
+                        i++;
+                        Log($"i: {i}");
+                    }
+                    while (A[j].CompareTo(q) > 0)
+                    {
+                        Log($"A[{j}]={A[j]} > {q}");
+                        j--;
+                        Log($"j: {j}");
+                    }
+                    if (i <= j)
+                    {
+                        Log($"{i} <= {j}");
+                        Exchange<T>(A, i, j);
+
+                        i++;
+                        j--;
+                        Log($"i: {i}");
+                        Log($"j: {j}");
+                    }
+                }
+
+                if (p < j)
+                {
+                    Log($"{p} < {j}");
+                    SortArray(A, p, j);
+                }
+                if (i < r)
+                {
+
+                    Log($"{i} < {r}");
+                    SortArray(A, i, r);
+                }
+                return A;
+            }
+
+            SortArray(A, 0, A.Count - 1);
 
             return A;
         }

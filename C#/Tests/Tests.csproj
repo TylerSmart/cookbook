@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
+    <ProjectReference Include="..\LeetCode\LeetCode.csproj" />
   </ItemGroup>
 
   <ItemGroup>
