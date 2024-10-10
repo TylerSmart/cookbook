@@ -1,8 +1,8 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.MaximumWidthRamp
 {
-    public static class MaximumWidthRamp
+    public static class Solution
     {
-        public static int MaxWidthRamp(int[] nums)
+        public static int Solve(int[] nums)
         {
             int largestRamp = 0;
 
