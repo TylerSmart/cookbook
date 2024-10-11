@@ -6,39 +6,33 @@
         {
             if (s.Length <= numRows || numRows == 1) return s;
 
-            int zigCount = numRows; // vertical
-            int zagCount = numRows - 2; // diagonal
+            string[] solution = new string[numRows];
 
-            List<char> output = new List<char>();
+            int verticalLength = numRows;
+            int diagonalLength = numRows - 2;
+            int zigzagLength = diagonalLength + verticalLength;
 
-            for (int i = 0; i < s.Length; i += zigCount + zagCount)
+            int columns = (int)Math.Ceiling(s.Length / (double)(numRows + diagonalLength));
+
+            for (int column = 0; column < columns; column++)
             {
-                output.Add(s[i]);
-            }
-
-            for (int i = 0; i < zagCount; i++)
-            {
-                for (int j = 0; j < (s.Length / (zigCount + zagCount)) + 1; j++)
+                for (int row = 0; row < verticalLength; row++)
                 {
-                    try
-                    {
-                    output.Add(s[(i + 1) + (j * (zigCount + zagCount))]);
-                    } catch (Exception _) { }
-                    try
-                    {
-                        output.Add(s[(i + 1) + (j * (zigCount + zagCount)) + (zagCount + zigCount - 2 - 2 * i)]);
-                    } catch (Exception _) { }
+                    int index = column * zigzagLength + row;
 
+                    if (index < s.Length) solution[row] += (s[index]);
+
+                }
+
+                for (int i = 0; i < diagonalLength; i++)
+                {
+                    int index = (column * zigzagLength) + verticalLength + i;
+                    if (index < s.Length) solution[verticalLength - 1 - (i + 1)] += s[index];
 
                 }
             }
 
-            for (int i = (zigCount + zagCount) / 2; i < s.Length; i += zigCount + zagCount)
-            {
-                output.Add(s[i]);
-            }
-
-            return string.Join(null, output);
+            return string.Concat(solution);
         }
     }
 }
