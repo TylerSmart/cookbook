@@ -37,5 +37,12 @@ namespace Tests
             Assert.AreEqual(3, LeetCode.LengthOfLongestSubstring.Solution.Solve("pwwkew"));
             Assert.AreEqual(1, LeetCode.LengthOfLongestSubstring.Solution.Solve(" "));
         }
+
+        [TestMethod]
+        public void TheNumberOfTheSmallestUnoccupiedChair()
+        {
+            Assert.AreEqual(1, LeetCode.TheNumberOfTheSmallestUnoccupiedChair.Solution.Solve([[1, 4], [2, 3], [4, 6]], 1));
+            Assert.AreEqual(2, LeetCode.TheNumberOfTheSmallestUnoccupiedChair.Solution.Solve([[3, 10], [1, 5], [2, 6]], 0));
+        }
     }
 }
