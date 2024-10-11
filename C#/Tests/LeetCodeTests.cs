@@ -44,5 +44,12 @@ namespace Tests
             Assert.AreEqual(1, LeetCode.TheNumberOfTheSmallestUnoccupiedChair.Solution.Solve([[1, 4], [2, 3], [4, 6]], 1));
             Assert.AreEqual(2, LeetCode.TheNumberOfTheSmallestUnoccupiedChair.Solution.Solve([[3, 10], [1, 5], [2, 6]], 0));
         }
+
+        [TestMethod]
+        public void MedianOfTwoSortedArrays()
+        {
+            Assert.AreEqual(2.00000, LeetCode.MedianOfTwoSortedArrays.Solution.Solve([1, 3], [2]));
+            Assert.AreEqual(2.50000, LeetCode.MedianOfTwoSortedArrays.Solution.Solve([1, 2], [3, 4]));
+        }
     }
 }
