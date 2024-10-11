@@ -60,5 +60,13 @@ namespace Tests
             Assert.AreEqual("bb", LeetCode.LongestPalindromicSubstring.Solution.Solve("cbbd"));
             Assert.AreEqual("a", LeetCode.LongestPalindromicSubstring.Solution.Solve("a"));
         }
+
+        [TestMethod]
+        public void ZigzagConversion()
+        {
+            Assert.AreEqual("PAHNAPLSIIGYIR", LeetCode.ZigzagConversion.Solution.Solve("PAYPALISHIRING", 3));
+            Assert.AreEqual("PINALSIGYAHRPI", LeetCode.ZigzagConversion.Solution.Solve("PAYPALISHIRING", 4));
+            Assert.AreEqual("A", LeetCode.ZigzagConversion.Solution.Solve("A", 1));
+        }
     }
 }
