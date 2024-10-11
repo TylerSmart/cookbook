@@ -51,5 +51,14 @@ namespace Tests
             Assert.AreEqual(2.00000, LeetCode.MedianOfTwoSortedArrays.Solution.Solve([1, 3], [2]));
             Assert.AreEqual(2.50000, LeetCode.MedianOfTwoSortedArrays.Solution.Solve([1, 2], [3, 4]));
         }
+
+        [TestMethod]
+        public void LongestPalindromicSubstring()
+        {
+            Assert.AreEqual("bb", LeetCode.LongestPalindromicSubstring.Solution.Solve("bb"));
+            Assert.AreEqual("bab", LeetCode.LongestPalindromicSubstring.Solution.Solve("babad"));
+            Assert.AreEqual("bb", LeetCode.LongestPalindromicSubstring.Solution.Solve("cbbd"));
+            Assert.AreEqual("a", LeetCode.LongestPalindromicSubstring.Solution.Solve("a"));
+        }
     }
 }
