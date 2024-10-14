@@ -108,5 +108,13 @@ namespace Tests
             Assert.AreEqual("AceCreIm", LeetCode.ReverseVowelsOfAString.Solution.Solve("IceCreAm"));
             Assert.AreEqual("leotcede", LeetCode.ReverseVowelsOfAString.Solution.Solve("leetcode"));
         }
+
+        [TestMethod]
+        public void ReverseWordsInAString()
+        {
+            Assert.AreEqual("example good a", LeetCode.ReverseWordsInAString.Solution.Solve("a good   example"));
+            Assert.AreEqual("blue is sky the", LeetCode.ReverseWordsInAString.Solution.Solve("the sky is blue"));
+            Assert.AreEqual("world hello", LeetCode.ReverseWordsInAString.Solution.Solve("  hello world  "));
+        }
     }
 }
