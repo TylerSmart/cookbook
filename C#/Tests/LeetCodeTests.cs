@@ -68,5 +68,21 @@ namespace Tests
             Assert.AreEqual("PINALSIGYAHRPI", LeetCode.ZigzagConversion.Solution.Solve("PAYPALISHIRING", 4));
             Assert.AreEqual("A", LeetCode.ZigzagConversion.Solution.Solve("A", 1));
         }
+
+        [TestMethod]
+        public void MergeStringsAlternately()
+        {
+            Assert.AreEqual("apbqcr", LeetCode.MergeStringsAlternately.Solution.Solve("abc", "pqr"));
+            Assert.AreEqual("apbqrs", LeetCode.MergeStringsAlternately.Solution.Solve("ab", "pqrs"));
+            Assert.AreEqual("apbqcd", LeetCode.MergeStringsAlternately.Solution.Solve("abcd", "pq"));
+        }
+
+        [TestMethod]
+        public void GreatestCommonDivisorOfStrings()
+        {
+            Assert.AreEqual("ABC", LeetCode.GreatestCommonDivisorOfStrings.Solution.Solve("ABCABC", "ABC"));
+            Assert.AreEqual("AB", LeetCode.GreatestCommonDivisorOfStrings.Solution.Solve("ABABAB", "ABAB"));
+            Assert.AreEqual("", LeetCode.GreatestCommonDivisorOfStrings.Solution.Solve("LEET", "CODE"));
+        }
     }
 }
