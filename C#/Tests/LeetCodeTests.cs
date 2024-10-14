@@ -123,5 +123,13 @@ namespace Tests
             Assert.IsTrue(LeetCode.ProductOfArrayExceptSelf.Solution.Solve([1, 2, 3, 4]).SequenceEqual([24, 12, 8, 6]));
             Assert.IsTrue(LeetCode.ProductOfArrayExceptSelf.Solution.Solve([-1, 1, 0, -3, 3]).SequenceEqual([0, 0, 9, 0, 0]));
         }
+
+        [TestMethod]
+        public void IncreasingTripletSubsequence()
+        {
+            Assert.AreEqual(true, LeetCode.IncreasingTripletSubsequence.Solution.Solve([1, 2, 3, 4, 5]));
+            Assert.AreEqual(false, LeetCode.IncreasingTripletSubsequence.Solution.Solve([5, 4, 3, 2, 1]));
+            Assert.AreEqual(true, LeetCode.IncreasingTripletSubsequence.Solution.Solve([2, 1, 5, 0, 4, 6]));
+        }
     }
 }
