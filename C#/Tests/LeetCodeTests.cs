@@ -116,5 +116,12 @@ namespace Tests
             Assert.AreEqual("blue is sky the", LeetCode.ReverseWordsInAString.Solution.Solve("the sky is blue"));
             Assert.AreEqual("world hello", LeetCode.ReverseWordsInAString.Solution.Solve("  hello world  "));
         }
+
+        [TestMethod]
+        public void ProductOfArrayExceptSelf()
+        {
+            Assert.IsTrue(LeetCode.ProductOfArrayExceptSelf.Solution.Solve([1, 2, 3, 4]).SequenceEqual([24, 12, 8, 6]));
+            Assert.IsTrue(LeetCode.ProductOfArrayExceptSelf.Solution.Solve([-1, 1, 0, -3, 3]).SequenceEqual([0, 0, 9, 0, 0]));
+        }
     }
 }
