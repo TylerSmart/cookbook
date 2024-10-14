@@ -84,5 +84,13 @@ namespace Tests
             Assert.AreEqual("AB", LeetCode.GreatestCommonDivisorOfStrings.Solution.Solve("ABABAB", "ABAB"));
             Assert.AreEqual("", LeetCode.GreatestCommonDivisorOfStrings.Solution.Solve("LEET", "CODE"));
         }
+
+        [TestMethod]
+        public void KidsWithTheGreatestNumberOfCandies()
+        {
+            Assert.IsTrue(LeetCode.KidsWithTheGreatestNumberOfCandies.Solution.Solve([2, 3, 5, 1, 3], 3).SequenceEqual([true, true, true, false, true]));
+            Assert.IsTrue(LeetCode.KidsWithTheGreatestNumberOfCandies.Solution.Solve([4, 2, 1, 1, 2], 1).SequenceEqual([true, false, false, false, false]));
+            Assert.IsTrue(LeetCode.KidsWithTheGreatestNumberOfCandies.Solution.Solve([12, 1, 12], 10).SequenceEqual([true, false, true]));
+        }
     }
 }
