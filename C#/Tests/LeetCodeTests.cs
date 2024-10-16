@@ -140,5 +140,13 @@ namespace Tests
             Assert.AreEqual(1, LeetCode.SeparateBlackAndWhiteBalls.Soltuion.Solve("101"));
             Assert.AreEqual(0, LeetCode.SeparateBlackAndWhiteBalls.Soltuion.Solve("0111"));
         }
+
+        [TestMethod]
+        public void StringCompression()
+        {
+            Assert.AreEqual(6, LeetCode.StringCompression.Solution.Solve(['a', 'a', 'b', 'b', 'c', 'c', 'c']));
+            Assert.AreEqual(1, LeetCode.StringCompression.Solution.Solve(['a']));
+            Assert.AreEqual(4, LeetCode.StringCompression.Solution.Solve(['a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']));
+        }
     }
 }
