@@ -178,5 +178,12 @@ namespace Tests
             Assert.AreEqual(49, LeetCode.ContainerWithMostWater.Solution.Solve([1, 8, 6, 2, 5, 4, 8, 3, 7]));
             Assert.AreEqual(1, LeetCode.ContainerWithMostWater.Solution.Solve([1, 1]));
         }
+
+        [TestMethod]
+        public void MaxNumberOfKSumPairs()
+        {
+            Assert.AreEqual(2, LeetCode.MaxNumberOfKSumPairs.Solution.Solve([1, 2, 3, 4], 5));
+            Assert.AreEqual(1, LeetCode.MaxNumberOfKSumPairs.Solution.Solve([3, 1, 3, 4, 3], 6));
+        }
     }
 }
