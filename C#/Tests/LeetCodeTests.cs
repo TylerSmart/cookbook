@@ -171,5 +171,12 @@ namespace Tests
             Assert.AreEqual(true, LeetCode.IsSubsequence.Solution.Solve("abc", "ahbgdc"));
             Assert.AreEqual(false, LeetCode.IsSubsequence.Solution.Solve("axc", "ahbgdc"));
         }
+
+        [TestMethod]
+        public void ContainerWithMostWater()
+        {
+            Assert.AreEqual(49, LeetCode.ContainerWithMostWater.Solution.Solve([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+            Assert.AreEqual(1, LeetCode.ContainerWithMostWater.Solution.Solve([1, 1]));
+        }
     }
 }
