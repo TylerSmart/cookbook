@@ -164,5 +164,12 @@ namespace Tests
             Console.WriteLine(string.Join(",", ints));
             Assert.IsTrue(ints.SequenceEqual([0]));
         }
+
+        [TestMethod]
+        public void IsSubsequence()
+        {
+            Assert.AreEqual(true, LeetCode.IsSubsequence.Solution.Solve("abc", "ahbgdc"));
+            Assert.AreEqual(false, LeetCode.IsSubsequence.Solution.Solve("axc", "ahbgdc"));
+        }
     }
 }
