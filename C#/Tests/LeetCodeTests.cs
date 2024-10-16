@@ -131,5 +131,14 @@ namespace Tests
             Assert.AreEqual(false, LeetCode.IncreasingTripletSubsequence.Solution.Solve([5, 4, 3, 2, 1]));
             Assert.AreEqual(true, LeetCode.IncreasingTripletSubsequence.Solution.Solve([2, 1, 5, 0, 4, 6]));
         }
+
+        [TestMethod]
+        public void SeparateBlackAndWhiteBalls()
+        {
+            Assert.AreEqual(2, LeetCode.SeparateBlackAndWhiteBalls.Soltuion.Solve("100"));
+            Assert.AreEqual(10, LeetCode.SeparateBlackAndWhiteBalls.Soltuion.Solve("11001001"));
+            Assert.AreEqual(1, LeetCode.SeparateBlackAndWhiteBalls.Soltuion.Solve("101"));
+            Assert.AreEqual(0, LeetCode.SeparateBlackAndWhiteBalls.Soltuion.Solve("0111"));
+        }
     }
 }
