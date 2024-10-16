@@ -148,5 +148,21 @@ namespace Tests
             Assert.AreEqual(1, LeetCode.StringCompression.Solution.Solve(['a']));
             Assert.AreEqual(4, LeetCode.StringCompression.Solution.Solve(['a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']));
         }
+
+        [TestMethod]
+        public void MoveZeroes()
+        {
+            int[] ints;
+
+            ints = [0, 1, 0, 3, 12];
+            LeetCode.MoveZeroes.Solution.Solve(ints);
+            Console.WriteLine(string.Join(",", ints));
+            Assert.IsTrue(ints.SequenceEqual([1, 3, 12, 0, 0]));
+
+            ints = [0];
+            LeetCode.MoveZeroes.Solution.Solve(ints);
+            Console.WriteLine(string.Join(",", ints));
+            Assert.IsTrue(ints.SequenceEqual([0]));
+        }
     }
 }
