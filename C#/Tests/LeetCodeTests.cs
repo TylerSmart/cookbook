@@ -185,5 +185,13 @@ namespace Tests
             Assert.AreEqual(2, LeetCode.MaxNumberOfKSumPairs.Solution.Solve([1, 2, 3, 4], 5));
             Assert.AreEqual(1, LeetCode.MaxNumberOfKSumPairs.Solution.Solve([3, 1, 3, 4, 3], 6));
         }
+
+        [TestMethod]
+        public void MaximumAverageSubarray1()
+        {
+            Assert.AreEqual(12.75, LeetCode.MaximumAverageSubarray1.Solution.Solve([1, 12, -5, -6, 50, 3], 4));
+            Assert.AreEqual(5, LeetCode.MaximumAverageSubarray1.Solution.Solve([5], 1));
+        }
+
     }
 }
