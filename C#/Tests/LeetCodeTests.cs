@@ -193,5 +193,13 @@ namespace Tests
             Assert.AreEqual(5, LeetCode.MaximumAverageSubarray1.Solution.Solve([5], 1));
         }
 
+        [TestMethod]
+        public void MaximumNumberOfVowelsInASubstringOfGivenLength()
+        {
+            Assert.AreEqual(3, LeetCode.MaximumNumberOfVowelsInASubstringOfGivenLength.Solution.Solve("abciiidef", 3));
+            Assert.AreEqual(2, LeetCode.MaximumNumberOfVowelsInASubstringOfGivenLength.Solution.Solve("aeiou", 2));
+            Assert.AreEqual(2, LeetCode.MaximumNumberOfVowelsInASubstringOfGivenLength.Solution.Solve("leetcode", 3));
+        }
+
     }
 }
