@@ -211,5 +211,12 @@ namespace Tests
             Assert.AreEqual(10, LeetCode.MaxConsecutiveOnes3.Solution.Solve([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3));
         }
 
+        [TestMethod]
+        public void LongestSubarrayOfOnesAfterDeletingOneElement()
+        {
+            Assert.AreEqual(2, LeetCode.LongestSubarrayOfOnesAfterDeletingOneElement.Solution.Solve([1, 1, 1]));
+            Assert.AreEqual(3, LeetCode.LongestSubarrayOfOnesAfterDeletingOneElement.Solution.Solve([1, 1, 0, 1]));
+            Assert.AreEqual(5, LeetCode.LongestSubarrayOfOnesAfterDeletingOneElement.Solution.Solve([0, 1, 1, 1, 0, 1, 1, 0, 1]));
+        }
     }
 }
