@@ -201,5 +201,15 @@ namespace Tests
             Assert.AreEqual(2, LeetCode.MaximumNumberOfVowelsInASubstringOfGivenLength.Solution.Solve("leetcode", 3));
         }
 
+        [TestMethod]
+        public void MaxConsecutiveOnes3()
+        {
+            Assert.AreEqual(3, LeetCode.MaxConsecutiveOnes3.Solution.Solve([0, 0, 1, 1, 1, 0, 0], 0));
+            Assert.AreEqual(4, LeetCode.MaxConsecutiveOnes3.Solution.Solve([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 0));
+            Assert.AreEqual(3, LeetCode.MaxConsecutiveOnes3.Solution.Solve([0, 0, 1, 1, 1, 0, 0], 0));
+            Assert.AreEqual(6, LeetCode.MaxConsecutiveOnes3.Solution.Solve([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+            Assert.AreEqual(10, LeetCode.MaxConsecutiveOnes3.Solution.Solve([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3));
+        }
+
     }
 }
