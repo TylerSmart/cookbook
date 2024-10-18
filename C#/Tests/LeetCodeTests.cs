@@ -218,5 +218,12 @@ namespace Tests
             Assert.AreEqual(3, LeetCode.LongestSubarrayOfOnesAfterDeletingOneElement.Solution.Solve([1, 1, 0, 1]));
             Assert.AreEqual(5, LeetCode.LongestSubarrayOfOnesAfterDeletingOneElement.Solution.Solve([0, 1, 1, 1, 0, 1, 1, 0, 1]));
         }
+
+        [TestMethod]
+        public void FindTheHighestAltitude()
+        {
+            Assert.AreEqual(1, LeetCode.FindTheHighestAltitude.Solution.Solve([-5, 1, 5, 0, -7]));
+            Assert.AreEqual(0, LeetCode.FindTheHighestAltitude.Solution.Solve([-4, -3, -2, -1, 4, 3, 2]));
+        }
     }
 }
