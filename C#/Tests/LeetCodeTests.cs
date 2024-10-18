@@ -225,5 +225,13 @@ namespace Tests
             Assert.AreEqual(1, LeetCode.FindTheHighestAltitude.Solution.Solve([-5, 1, 5, 0, -7]));
             Assert.AreEqual(0, LeetCode.FindTheHighestAltitude.Solution.Solve([-4, -3, -2, -1, 4, 3, 2]));
         }
+
+        [TestMethod]
+        public void FindPivotIndex()
+        {
+            Assert.AreEqual(3, LeetCode.FindPivotIndex.Solution.Solve([1, 7, 3, 6, 5, 6]));
+            Assert.AreEqual(-1, LeetCode.FindPivotIndex.Solution.Solve([1, 2, 3]));
+            Assert.AreEqual(0, LeetCode.FindPivotIndex.Solution.Solve([2, 1, -1]));
+        }
     }
 }
