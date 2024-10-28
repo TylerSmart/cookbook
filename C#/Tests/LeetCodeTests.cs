@@ -233,5 +233,42 @@ namespace Tests
             Assert.AreEqual(-1, LeetCode.FindPivotIndex.Solution.Solve([1, 2, 3]));
             Assert.AreEqual(0, LeetCode.FindPivotIndex.Solution.Solve([2, 1, -1]));
         }
+
+        [TestMethod]
+        public void FindTheDifferenceOfTwoArrays()
+        {
+            int[][] inputs;
+            List<List<int>> expectedOutput;
+            List<List<int>> actual;
+
+            inputs = [[1, 2, 3], [2, 4, 6]];
+            expectedOutput = [[1, 3], [4, 6]];
+            actual = LeetCode.FindTheDifferenceOfTwoArrays.Solution.Solve(inputs[0], inputs[1]).ToList().Select(arr => arr.ToList()).ToList();
+            Check2DLists(expectedOutput, actual);
+
+            inputs = [[1, 2, 3, 3], [1, 1, 2, 2]];
+            expectedOutput = [[3], []];
+            actual = LeetCode.FindTheDifferenceOfTwoArrays.Solution.Solve(inputs[0], inputs[1]).ToList().Select(arr => arr.ToList()).ToList();
+            Check2DLists(expectedOutput, actual);
+
+            inputs = [[-80, -15, -81, -28, -61, 63, 14, -45, -35, -10], [-1, -40, -44, 41, 10, -43, 69, 10, 2]];
+            expectedOutput = [[-81, -35, -10, -28, -61, -45, -15, 14, -80, 63], [-1, 2, 69, -40, 41, 10, -43, -44]];
+            actual = LeetCode.FindTheDifferenceOfTwoArrays.Solution.Solve(inputs[0], inputs[1]).ToList().Select(arr => arr.ToList()).ToList();
+            Check2DLists(expectedOutput, actual);
+
+            void Check2DLists(List<List<int>> expected, List<List<int>> actual)
+            {
+
+                Assert.AreEqual(expected.Count, actual.Count);
+                
+                for (int i = 0; i < expected.Count; i++) {
+                    expected[i].Sort();
+                    actual[i].Sort();
+
+                    Assert.IsTrue(expected[i].SequenceEqual(actual[i]));
+                }
+            }
+
+        }
     }
 }
