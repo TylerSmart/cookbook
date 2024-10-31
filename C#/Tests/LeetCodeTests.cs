@@ -268,7 +268,14 @@ namespace Tests
                     Assert.IsTrue(expected[i].SequenceEqual(actual[i]));
                 }
             }
+        }
 
+        [TestMethod]
+        public void UniqueNumberOfOccurrences()
+        {
+            Assert.IsTrue(LeetCode.UniqueNumberOfOccurrences.Solution.Solve([1, 2, 2, 1, 1, 3]));
+            Assert.IsFalse(LeetCode.UniqueNumberOfOccurrences.Solution.Solve([1, 2]));
+            Assert.IsTrue(LeetCode.UniqueNumberOfOccurrences.Solution.Solve([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]));
         }
     }
 }
